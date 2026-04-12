@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: node:20-alpine
+    container_name: findex-frontend-dev
+    working_dir: /app
+    volumes:
+      # 현재 폴더의 소스코드를 도커 컨테이너 내부와 연결 (코드 수정 시 실시간 반영)
+      - ./:/app
+      # 로컬과 도커 내부의 node_modules 충돌을 방지하는 익명 볼륨
+      - /app/node_modules
+    ports:
+      - "5173:5173" # Vite 개발 서버 기본 포트
+    environment:
+      # CLAUDE.md에 명시된 필수 환경변수
+      # host.docker.internal을 통해 윈도우(로컬)에 떠있는 스프링부트(8080)로 API 요청 전달
+      - API_PROXY_TARGET=http://host.docker.internal:8080
+    # 컨테이너 실행 시 패키지를 설치하고 개발 서버를 모든 IP(--host)에서 접근 가능하게 실행
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
