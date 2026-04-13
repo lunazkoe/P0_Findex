@@ -26,7 +26,7 @@ public class AutoSyncConfig {
     @Column(nullable = false)
     private Boolean enabled = false;
 
-    private AutoSyncConfig(IndexInfo indexInfo, Boolean enabled) {
+    public AutoSyncConfig(IndexInfo indexInfo, Boolean enabled) {
         this.indexInfo = indexInfo;
         this.enabled = enabled != null ? enabled : false;
     }

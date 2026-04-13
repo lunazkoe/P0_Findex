@@ -46,7 +46,7 @@ public class IndexData {
     private Long tradingPrice;
     private Long marketTotalAmount;
 
-    private IndexData(IndexInfo indexInfo,
+    public IndexData(IndexInfo indexInfo,
                       LocalDate baseDate,
                       SourceType sourceType,
                       BigDecimal marketPrice,
