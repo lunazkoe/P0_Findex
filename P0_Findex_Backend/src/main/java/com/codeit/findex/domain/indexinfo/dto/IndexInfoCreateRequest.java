@@ -19,7 +19,7 @@ public class IndexInfoCreateRequest {
     private String indexName;
 
     @NotNull(message = "채용 종목 수는 필수입니다.")
-    private Integer employedItemCount;
+    private Integer employedItemsCount;
 
     @NotNull(message = "기준 시점은 필수입니다.")
     private LocalDate basePointInTime;

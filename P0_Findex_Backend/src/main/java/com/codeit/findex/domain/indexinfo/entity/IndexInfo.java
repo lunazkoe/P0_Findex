@@ -72,7 +72,7 @@ public class IndexInfo {
     public static IndexInfo create(
             String indexClassification,
             String indexName,
-            Integer employedItemCount,
+            Integer employedItemsCount,
             LocalDate basePointInTime,
             BigDecimal baseIndex,
             SourceType sourceType,
@@ -81,7 +81,7 @@ public class IndexInfo {
         return new IndexInfo(
                 indexClassification,
                 indexName,
-                employedItemCount,
+                employedItemsCount,
                 basePointInTime,
                 baseIndex,
                 sourceType,
