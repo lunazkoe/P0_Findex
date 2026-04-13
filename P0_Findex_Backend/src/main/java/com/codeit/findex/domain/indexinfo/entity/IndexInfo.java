@@ -51,7 +51,7 @@ public class IndexInfo {
     @OneToOne(mappedBy = "indexInfo", cascade = CascadeType.ALL, orphanRemoval = true)
     private AutoSyncConfig autoSyncConfig;
 
-    private IndexInfo(
+    public IndexInfo(
             String indexClassification,
             String indexName,
             Integer employedItemsCount,

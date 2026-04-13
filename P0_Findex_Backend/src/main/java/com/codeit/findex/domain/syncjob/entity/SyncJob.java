@@ -43,7 +43,7 @@ public class SyncJob {
     @Column(length = 20, nullable = false)
     private SyncResult result;
 
-    private SyncJob(Long id, JobType jobType, IndexInfo indexInfo, LocalDate targetDate, String worker, LocalDateTime jobTime, SyncResult result) {
+    public SyncJob(Long id, JobType jobType, IndexInfo indexInfo, LocalDate targetDate, String worker, LocalDateTime jobTime, SyncResult result) {
         this.id = id;
         this.jobType = jobType;
         this.indexInfo = indexInfo;
